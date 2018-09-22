@@ -74,7 +74,7 @@ var summernoteComponent = {
                     if (!me.isChanging) {
                         me.isChanging = true;
                         var code = me.control.summernote("code");
-                        me.model = (code === null || code.length === 0 ? null : code);
+                        me.$emit('update:model', (code === null || code.length === 0 ? null : code));
                         me.$nextTick(function() {
                             me.isChanging = false;
                         });
